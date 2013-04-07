@@ -3,6 +3,8 @@ import logging
 
 from django.conf import settings
 
+import balanced
+
 
 LOGGER = logging.getLogger(__name__)
 
@@ -37,3 +39,5 @@ settings.TEMPLATE_DIRS += (
 
 if not BALANCED.get('API_KEY'):
     LOGGER.error('You must set the BALANCED_API_KEY environment variable.')
+else:
+    balanced.configure(BALANCED['API_KEY'])

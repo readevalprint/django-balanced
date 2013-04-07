@@ -12,6 +12,5 @@ class Command(BaseCommand):
            'local system'
 
     def handle(self, *args, **options):
-        # balanced.configure(settings.BALANCED['API_KEY'])
         BankAccount.sync()
         Credit.sync()
